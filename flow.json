@@ -1,1 +1,658 @@
-[]
+[
+    {
+        "id": "98328327.8464c",
+        "type": "tab",
+        "label": "Hello World",
+        "disabled": false,
+        "info": "The typical first program learning a new language. Plus variantions and extensions."
+    },
+    {
+        "id": "fcbeb62d.589b58",
+        "type": "tab",
+        "label": "Weather",
+        "disabled": false,
+        "info": "[OpenWeatherMap](https://openweathermap.org)\n"
+    },
+    {
+        "id": "579c6ade.53208c",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Open Weather",
+        "icon": "wi-wu-sunny",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "c9fd5560.caf9b8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Current",
+        "tab": "579c6ade.53208c",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "93f31459.ef4a18",
+        "type": "ui_group",
+        "z": "",
+        "name": "payload",
+        "tab": "579c6ade.53208c",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": true
+    },
+    {
+        "id": "b5d900c4.ce434",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "345ffbe3.e5ff2c",
+        "type": "ui_group",
+        "z": "",
+        "name": "data",
+        "tab": "579c6ade.53208c",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": true
+    },
+    {
+        "id": "b8c2a4be.14f178",
+        "type": "comment",
+        "z": "98328327.8464c",
+        "name": "Hello World Flow",
+        "info": "",
+        "x": 260,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "99cb6bd8.2c8ed",
+        "type": "inject",
+        "z": "98328327.8464c",
+        "name": "Hello World",
+        "topic": "",
+        "payload": "Hello World!",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 170,
+        "y": 180,
+        "wires": [
+            [
+                "43e0945a.683b4c"
+            ]
+        ]
+    },
+    {
+        "id": "43e0945a.683b4c",
+        "type": "debug",
+        "z": "98328327.8464c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 370,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "b8521895.9656d8",
+        "type": "openweathermap",
+        "z": "fcbeb62d.589b58",
+        "name": "",
+        "wtype": "current",
+        "lon": "",
+        "lat": "",
+        "city": "",
+        "country": "",
+        "language": "en",
+        "x": 470,
+        "y": 220,
+        "wires": [
+            [
+                "3cd46d7e.03dfaa"
+            ]
+        ]
+    },
+    {
+        "id": "251319f9.635b1e",
+        "type": "debug",
+        "z": "fcbeb62d.589b58",
+        "name": "Current Weather",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 900,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "37f1266b.094482",
+        "type": "inject",
+        "z": "fcbeb62d.589b58",
+        "name": "",
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 280,
+        "wires": [
+            [
+                "4999a56c.a16184"
+            ]
+        ]
+    },
+    {
+        "id": "4999a56c.a16184",
+        "type": "change",
+        "z": "fcbeb62d.589b58",
+        "name": "Calgary",
+        "rules": [
+            {
+                "t": "set",
+                "p": "location.city",
+                "pt": "msg",
+                "to": "Calgary",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "location.country",
+                "pt": "msg",
+                "to": "Canada",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 280,
+        "wires": [
+            [
+                "b8521895.9656d8",
+                "5cd7c103.929c98"
+            ]
+        ]
+    },
+    {
+        "id": "5cd7c103.929c98",
+        "type": "openweathermap",
+        "z": "fcbeb62d.589b58",
+        "d": true,
+        "name": "Forecast",
+        "wtype": "forecast",
+        "lon": "",
+        "lat": "",
+        "city": "",
+        "country": "",
+        "language": "en",
+        "x": 460,
+        "y": 360,
+        "wires": [
+            [
+                "a7c07b3f.9753a"
+            ]
+        ]
+    },
+    {
+        "id": "a7c07b3f.9753a",
+        "type": "debug",
+        "z": "fcbeb62d.589b58",
+        "name": "Forecast",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 620,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "d8c30d37.b567d8",
+        "type": "inject",
+        "z": "98328327.8464c",
+        "name": "Hello",
+        "topic": "",
+        "payload": "Hello",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 150,
+        "y": 280,
+        "wires": [
+            [
+                "5b7df949.836c4"
+            ]
+        ]
+    },
+    {
+        "id": "5b7df949.836c4",
+        "type": "change",
+        "z": "98328327.8464c",
+        "name": "World",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "msg.payload & \" World!\"",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 350,
+        "y": 280,
+        "wires": [
+            [
+                "1e329824.05746"
+            ]
+        ]
+    },
+    {
+        "id": "1e329824.05746",
+        "type": "debug",
+        "z": "98328327.8464c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 570,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "e64b6a95.582238",
+        "type": "json",
+        "z": "fcbeb62d.589b58",
+        "name": "payload",
+        "property": "payload",
+        "action": "str",
+        "pretty": true,
+        "x": 880,
+        "y": 120,
+        "wires": [
+            [
+                "5439671b.a55a48"
+            ]
+        ]
+    },
+    {
+        "id": "b98a1a2.3695b68",
+        "type": "json",
+        "z": "fcbeb62d.589b58",
+        "name": "location",
+        "property": "location",
+        "action": "str",
+        "pretty": true,
+        "x": 880,
+        "y": 160,
+        "wires": [
+            [
+                "67abbc74.97256c"
+            ]
+        ]
+    },
+    {
+        "id": "a5e6cb23.62cbf8",
+        "type": "json",
+        "z": "fcbeb62d.589b58",
+        "name": "data",
+        "property": "data",
+        "action": "str",
+        "pretty": true,
+        "x": 870,
+        "y": 200,
+        "wires": [
+            [
+                "fb27b7bd.f66bc"
+            ]
+        ]
+    },
+    {
+        "id": "3b86859f.80a99a",
+        "type": "inject",
+        "z": "fcbeb62d.589b58",
+        "name": "sample weather payload",
+        "topic": "",
+        "payload": "{\"id\":803,\"weather\":\"Clouds\",\"detail\":\"broken clouds\",\"icon\":\"04d\",\"tempk\":289.58,\"tempc\":16.4,\"temp_maxc\":18.3,\"temp_minc\":15,\"humidity\":39,\"pressure\":1013,\"maxtemp\":291.48,\"mintemp\":288.15,\"windspeed\":1.5,\"winddirection\":310,\"location\":\"Calgary\",\"sunrise\":1592306464,\"sunset\":1592366004,\"clouds\":75,\"description\":\"The weather in Calgary at coordinates: 51.05, -114.09 is Clouds (broken clouds).\"}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 210,
+        "y": 140,
+        "wires": [
+            [
+                "be44fe65.0e0a48"
+            ]
+        ]
+    },
+    {
+        "id": "be44fe65.0e0a48",
+        "type": "change",
+        "z": "fcbeb62d.589b58",
+        "name": "more msg properties",
+        "rules": [
+            {
+                "t": "set",
+                "p": "title",
+                "pt": "msg",
+                "to": "Current Weather Information",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "time",
+                "pt": "msg",
+                "to": "2020-06-17T02:11:29.000Z",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "description",
+                "pt": "msg",
+                "to": "Current weather information at coordinates: 51.05, -114.09",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "location",
+                "pt": "msg",
+                "to": "{\"lon\":-114.09,\"lat\":51.05,\"city\":\"Calgary\",\"country\":\"CA\"}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "data",
+                "pt": "msg",
+                "to": "{\"coord\":{\"lon\":-114.09,\"lat\":51.05},\"weather\":[{\"id\":803,\"main\":\"Clouds\",\"description\":\"broken clouds\",\"icon\":\"04d\"}],\"base\":\"stations\",\"main\":{\"temp\":289.58,\"feels_like\":286.93,\"temp_min\":288.15,\"temp_max\":291.48,\"pressure\":1013,\"humidity\":39},\"visibility\":64372,\"wind\":{\"speed\":1.5,\"deg\":310},\"clouds\":{\"all\":75},\"dt\":1592359889,\"sys\":{\"type\":1,\"id\":989,\"country\":\"CA\",\"sunrise\":1592306464,\"sunset\":1592366004},\"timezone\":-21600,\"id\":5913490,\"name\":\"Calgary\",\"cod\":200}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 140,
+        "wires": [
+            [
+                "3cd46d7e.03dfaa"
+            ]
+        ]
+    },
+    {
+        "id": "cdccc61e.44c838",
+        "type": "ui_text",
+        "z": "fcbeb62d.589b58",
+        "group": "c9fd5560.caf9b8",
+        "order": 1,
+        "width": "6",
+        "height": "2",
+        "name": "description",
+        "label": "",
+        "format": "{{msg.title}}</br>at {{msg.time}}</br>{{msg.payload.description}}",
+        "layout": "row-left",
+        "x": 930,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "c7c74074.62fe",
+        "type": "ui_text",
+        "z": "fcbeb62d.589b58",
+        "group": "93f31459.ef4a18",
+        "order": 2,
+        "width": "6",
+        "height": "8",
+        "name": "payload",
+        "label": "",
+        "format": "id: {{msg.payload.id}} </br>weather: {{msg.payload.weather}} </br>detail: {{msg.payload.detail}} </br>icon: {{msg.payload.icon}} </br>tempk: {{msg.payload.tempk}} </br>tempc: {{msg.payload.tempc}} </br>temp_maxc: {{msg.payload.temp_maxc}} </br>temp_minc: {{msg.payload.temp_minc}} </br>humidity: {{msg.payload.humidity}} </br>pressure: {{msg.payload.pressure}} </br>maxtemp: {{msg.payload.maxtemp}} </br>mintemp: {{msg.payload.mintemp}} </br>windspeed: {{msg.payload.windspeed}} </br>winddirection: {{msg.payload.winddirection}} </br>location: {{msg.payload.location}} </br>sunrise: {{msg.payload.sunrise}} </br>sunset: {{msg.payload.sunset}} </br>clouds: {{msg.payload.clouds}} </br>description: {{msg.payload.description}}",
+        "layout": "row-left",
+        "x": 920,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "72390086.83db4",
+        "type": "ui_text",
+        "z": "fcbeb62d.589b58",
+        "group": "345ffbe3.e5ff2c",
+        "order": 0,
+        "width": "4",
+        "height": "3",
+        "name": "data",
+        "label": "",
+        "format": "</br>base: {{msg.data.base}} </br>temp: {{msg.data.main.temp}} </br>feels_like: {{msg.data.main.feels_like}} </br>visibility: {{msg.data.visibility}} </br>timezone: {{msg.data.timezone}} </br>cod: {{msg.data.cod}}",
+        "layout": "row-left",
+        "x": 910,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "67abbc74.97256c",
+        "type": "change",
+        "z": "fcbeb62d.589b58",
+        "name": "location to payload",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "location",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1070,
+        "y": 160,
+        "wires": [
+            [
+                "5439671b.a55a48"
+            ]
+        ]
+    },
+    {
+        "id": "fb27b7bd.f66bc",
+        "type": "change",
+        "z": "fcbeb62d.589b58",
+        "name": "data to payload",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "data",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 200,
+        "wires": [
+            [
+                "5439671b.a55a48"
+            ]
+        ]
+    },
+    {
+        "id": "5439671b.a55a48",
+        "type": "debug",
+        "z": "fcbeb62d.589b58",
+        "name": "json data",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 1280,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "3cd46d7e.03dfaa",
+        "type": "change",
+        "z": "fcbeb62d.589b58",
+        "name": "merge",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 220,
+        "wires": [
+            [
+                "251319f9.635b1e",
+                "e64b6a95.582238",
+                "b98a1a2.3695b68",
+                "a5e6cb23.62cbf8",
+                "cdccc61e.44c838",
+                "c7c74074.62fe",
+                "72390086.83db4"
+            ]
+        ]
+    }
+]

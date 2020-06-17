@@ -2,7 +2,9 @@
     "name": "nr-guide",
     "description": "A Node-RED Project",
     "version": "0.0.1",
-    "dependencies": {},
+    "dependencies": {
+        "node-red-node-openweathermap": "0.2.2"
+    },
     "node-red": {
         "settings": {
             "flowFile": "flow.json",
