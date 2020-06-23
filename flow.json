@@ -211,7 +211,7 @@
         "y": 220,
         "wires": [
             [
-                "3cd46d7e.03dfaa"
+                "4afc7711.e6e088"
             ]
         ]
     },
@@ -260,7 +260,7 @@
                 "t": "set",
                 "p": "location.city",
                 "pt": "msg",
-                "to": "Calgary",
+                "to": "Osoyoos",
                 "tot": "str"
             },
             {
@@ -407,7 +407,7 @@
         "action": "str",
         "pretty": true,
         "x": 880,
-        "y": 160,
+        "y": 200,
         "wires": [
             [
                 "67abbc74.97256c"
@@ -423,7 +423,7 @@
         "action": "str",
         "pretty": true,
         "x": 870,
-        "y": 200,
+        "y": 160,
         "wires": [
             [
                 "fb27b7bd.f66bc"
@@ -501,7 +501,7 @@
         "y": 140,
         "wires": [
             [
-                "3cd46d7e.03dfaa"
+                "4afc7711.e6e088"
             ]
         ]
     },
@@ -573,7 +573,7 @@
         "to": "",
         "reg": false,
         "x": 1070,
-        "y": 160,
+        "y": 200,
         "wires": [
             [
                 "5439671b.a55a48"
@@ -599,8 +599,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1080,
-        "y": 200,
+        "x": 1060,
+        "y": 160,
         "wires": [
             [
                 "5439671b.a55a48"
@@ -623,26 +623,15 @@
         "wires": []
     },
     {
-        "id": "3cd46d7e.03dfaa",
-        "type": "change",
+        "id": "c2a1e064.3561c8",
+        "type": "link in",
         "z": "fcbeb62d.589b58",
-        "name": "merge",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
-            }
+        "name": "weatherjsonout",
+        "links": [
+            "4afc7711.e6e088"
         ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 670,
-        "y": 220,
+        "x": 675,
+        "y": 180,
         "wires": [
             [
                 "251319f9.635b1e",
@@ -653,6 +642,81 @@
                 "c7c74074.62fe",
                 "72390086.83db4"
             ]
+        ],
+        "info": "single reference port for multiple possible sources of weather data. fan-out"
+    },
+    {
+        "id": "4afc7711.e6e088",
+        "type": "link out",
+        "z": "fcbeb62d.589b58",
+        "name": "weatherjsonin",
+        "links": [
+            "c2a1e064.3561c8"
+        ],
+        "x": 615,
+        "y": 180,
+        "wires": [],
+        "info": "Gather multiple possible sources of open weather map data into a single wire. fan-in"
+    },
+    {
+        "id": "9eced5ce.16163",
+        "type": "inject",
+        "z": "98328327.8464c",
+        "name": "",
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 150,
+        "y": 360,
+        "wires": [
+            [
+                "9a8c7fb7.10ab8"
+            ]
         ]
+    },
+    {
+        "id": "9a8c7fb7.10ab8",
+        "type": "change",
+        "z": "98328327.8464c",
+        "name": "now",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$now()\t",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 350,
+        "y": 360,
+        "wires": [
+            [
+                "183b9f88.26d168"
+            ]
+        ]
+    },
+    {
+        "id": "183b9f88.26d168",
+        "type": "debug",
+        "z": "98328327.8464c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 570,
+        "y": 360,
+        "wires": []
     }
 ]
